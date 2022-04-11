@@ -17,4 +17,19 @@ class Berita_model extends CI_Model
 
 		return $this->db->get();
 	}
+
+
+	public function get_kategori()
+	{
+		$this->db->select('kategori_berita.*');
+		$this->db->from('kategori_berita');
+
+		return $this->db->get();
+	}
+
+
+	function input($data)
+	{
+		$this->db->insert('berita', $data);
+	}
 }
